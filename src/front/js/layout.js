@@ -5,11 +5,16 @@ import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
+import { Login } from "./pages/login";
+import { Register } from "./pages/register";
+
 import injectContext from "./store/appContext";
 
-import { Navbar } from "./component/navbar";
+import { Navbar1 } from "./component/navbar";
 import { Footer } from "./component/footer";
-
+import { Contact } from "./pages/contact";
+import { Vistaclasedisponibilidad } from "./pages/vistaclasedisponibilidad";
+import { Classview } from "./pages/classview";
 //create your first component
 const Layout = () => {
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -20,7 +25,7 @@ const Layout = () => {
 		<div className="d-flex flex-column h-100">
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
-					<Navbar />
+					<Navbar1 />
 					<Switch>
 						<Route exact path="/">
 							<Home />
@@ -28,8 +33,23 @@ const Layout = () => {
 						<Route exact path="/demo">
 							<Demo />
 						</Route>
+						<Route exact path="/login">
+							<Login />
+						</Route>
+						<Route exact path="/register">
+							<Register />
+						</Route>
+						<Route exact path="/contact">
+							<Contact />
+						</Route>
 						<Route exact path="/single/:theid">
 							<Single />
+						</Route>
+						<Route exact path="/clasesdisponibles">
+							<Vistaclasedisponibilidad />
+						</Route>
+						<Route exact path="/crearclase">
+							<Classview />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>

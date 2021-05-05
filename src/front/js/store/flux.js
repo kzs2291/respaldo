@@ -3,7 +3,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			message: null,
 			classRegistration: [],
-			classParticipants: []
+			classParticipants: [],
+			token: [],
+			login: false,
+			islogin: false,
+			demo: [
+				{
+					title: "FIRST",
+					background: "white",
+					initial: "white"
+				},
+				{
+					title: "SECOND",
+					background: "white",
+					initial: "white"
+				}
+			]
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -62,6 +77,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
+			},
+			setLogin: loggin => {
+				const store = getStore();
+				setStore({ islogin: loggin });
 			}
 		}
 	};
